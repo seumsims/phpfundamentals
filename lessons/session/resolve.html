@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/default.min.css">
+</head>
+<body>
+    <h1 itemprop="name" class="fs-headline1 ow-break-word mb8 flex--item fl1">
+        <a href="https://stackoverflow.com/questions/22076190/highlightjs-with-html-code" class="question-hyperlink">
+            highlightjs with html code
+
+        </a>
+    </h1>
+
+    <div class="s-prose js-post-body" itemprop="text">
+        <p>Oh, I think I understand the problem. You need to escape the HTML within the <code>&lt;code&gt;</code> element, otherwise it will be interpreted as HTML instead of text (you want the HTML displayed literally, not interpreted as part of the webpage structure).</p>
+        
+        <p>Change every <code>&lt;</code> to <code>&amp;lt;</code> and <code>&gt;</code> to <code>&amp;gt;</code>, as well as any other special HTML characters in your code sample. (If you're generating the page on the fly, most languages have a utility function to escape the HTML for you.)</p>
+    </div>
+    <h3>user2932428 solution without jQuery:</h3>
+    <pre>
+        <code class="language-js hljs">
+
+            document.querySelectorAll("code").forEach(function(element) {
+                element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+            });
+
+        </code>
+    </pre>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KH4MmQsCDuw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <script type="text/javascript" src="js/highlight.min.js"></script>
+    <script>
+        document.querySelectorAll("code").forEach(function(element) {
+    element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+});
+    hljs.highlightAll();
+    </script>
+</body>
+</html>

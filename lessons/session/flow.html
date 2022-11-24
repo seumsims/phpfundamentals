@@ -1,0 +1,109 @@
+<?php
+ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    echo 'posted';
+} 
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session</title>
+    <link rel="stylesheet" type="text/css" href="css/default.min.css">
+    
+    
+</head>
+<body>
+    <nav>
+        <a href="#start-1">start 1</a>
+        <a href="#start-2">start 2</a>
+    </nav>
+    <h1 id="start-1">start 1</h1>
+    <pre>
+        <code class="language-php hljs">
+
+           /* on top of the DOCTYPE html */
+ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    echo 'posted';
+} 
+
+        </code>
+
+    <code class="language-php hljs">
+        
+          <h1>login</h1>
+    <form action="login.php" method="POST">
+        <ul>
+            <li>
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username">
+            </li>
+            <li>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+            </li>
+            <li>
+                <input type="submit" value="Login">
+
+            </li>
+        </ul>
+    </form>
+
+    </code>
+</pre>
+
+<nav>
+    <a href="#start-1">start 1</a>
+    <a href="#start-2">start 2</a>
+</nav>
+
+<h1 id="start-2">start 2</h1>
+<pre>
+    <h2>this is for multiple form</h2>
+    <code class="language-php hljs">
+
+       /* on top of the DOCTYPE html */
+       
+       if (isset($_POST['loginForm'])) {
+           echo 'posted';
+       }
+      
+
+    </code>
+
+<code class="language-php hljs">
+    
+      <h1>login</h1>
+<form action="login.php" method="POST">
+    <ul>
+        <li>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username">
+        </li>
+        <li>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+        </li>
+        <li>
+            <input type="submit" value="Login" name="loginForm">
+
+        </li>
+    </ul>
+</form>
+
+</code>
+</pre>
+    
+  
+
+    <script type="text/javascript" src="js/highlight.min.js"></script>
+    <script>
+        document.querySelectorAll("code").forEach(function(element) {
+    element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+});
+    hljs.highlightAll();
+    </script>
+    
+</body>
+</html>

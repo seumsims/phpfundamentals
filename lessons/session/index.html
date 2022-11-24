@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session</title>
+    <link rel="stylesheet" type="text/css" href="css/default.min.css">
+    
+</head>
+<body>
+    <h1>login</h1>
+    <pre>
+        <code class="language-php hljs">
+            
+            <form  action="login.php">
+                <ul>
+                    <li>
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username">
+                    </li>
+                    <li>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password">
+                    </li>
+                    <li>
+                        <input type="button" value="Login">
+
+                    </li>
+                </ul>
+            </form>
+        </code> 
+    </pre>
+
+    <textarea name="" id="" cols="30" rows="10">
+
+        <form  action="login.php">
+            <ul>
+                <li>
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username">
+                </li>
+                <li>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                </li>
+                <li>
+                    <input type="button" value="Login">
+
+                </li>
+            </ul>
+        </form>
+
+    </textarea>
+
+    
+   
+    <script type="text/javascript" src="js/highlight.min.js"></script>
+    <script>
+        document.querySelectorAll("code").forEach(function(element) {
+    element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+});
+    hljs.highlightAll();
+    </script>
+</body>
+</html>
